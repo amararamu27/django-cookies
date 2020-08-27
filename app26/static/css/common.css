@@ -1,0 +1,28 @@
+#one{
+    color: deeppink;
+    font-size: 35px;
+    font-family: "Times New Roman";
+    padding: 10px;
+    background-color: azure;
+}
+.two{
+    color: green;
+    background-color: #f5efff;
+    font-size: 20px;
+    padding: 10px;
+    font-family: Arial;
+}
+.three{
+    background-color: lightcyan;
+}
+#four{
+    background-color: #f5efff;
+}
+.five{
+    font-family: Arial;
+    color: blue;
+    font-size: 18px;
+}
+#six{
+    color: crimson;
+}

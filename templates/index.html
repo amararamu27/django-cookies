@@ -1,0 +1,69 @@
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+</head>
+<body>
+<table align="center" border="2" width="1200">
+    <tr>
+        <th colspan="3" id="one">
+            Amara Ramu Mart
+        </th>
+    </tr>
+    <tr>
+        <th width="250" class="two">
+            Product Image
+        </th>
+        <th class="two">
+            Product Information
+        </th>
+        <th width="170" class="two">
+            <a href="{% url 'view_cart' %}">
+                <p>View Cart : {{ data1 }}</p>
+            </a>
+        </th>
+    </tr>
+    {% for x in data %}
+        <tr>
+            <th width="250" class="three">
+                <img src="{{ x.images.url }}" width="150" height="150">
+            </th>
+            <th id="four">
+                <table align="center" border="2">
+                    <tr>
+                        <th width="130" height="150">
+                            <table>
+                                <tr>
+                                    <th class="five">
+                                        {{ x.pname }}
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="five">
+                                        {{ x.price }}
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th class="five">
+                                        {{ x.quantity }}
+                                    </th>
+                                </tr>
+                            </table>
+                        </th>
+                        <th id="six">
+                            {{ x.features }}
+                        </th>
+                    </tr>
+                </table>
+            </th>
+            <th class="three">
+                <a href="{% url 'add_cart' %}?id={{ x.pno }}&val={{ x.pname }}">
+                    <img src="{% static 'images/cart.png' %}" width="50" height="50">
+                </a>
+            </th>
+        </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>
